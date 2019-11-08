@@ -277,6 +277,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &29263424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29263426}
+  - component: {fileID: 29263425}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &29263425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29263424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf66d5fc2904eb4429f8abf8789e3743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  f_paint_speed: 0
+  f_chick_jump: 0
+  b_chick_death: 0
+  i_win_number: 0
+  i_win_bast: 0
+--- !u!4 &29263426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29263424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1324759, y: -0.2889916, z: -2.2072048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &71987218
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,12 +418,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71987218}
   m_CullTransparentMesh: 0
---- !u!4 &106408316 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1855144531485089779, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1855144531389511311}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &184187427
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0516ab3076a0e3844b107d5234190946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 106408316}
+  i_number: 0
+  f_number: 0
+  b_can: 0
+  s_text: 
+  my_point: 0
 --- !u!4 &222240109
 Transform:
   m_ObjectHideFlags: 0
