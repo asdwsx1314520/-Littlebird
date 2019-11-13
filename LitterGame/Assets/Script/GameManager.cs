@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Transform pain;
+
     public float f_paint_speed;
 
     public float f_chick_jump;
@@ -22,6 +24,6 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        
+        pain.Translate(-0.01f,0,0);
     }
 }

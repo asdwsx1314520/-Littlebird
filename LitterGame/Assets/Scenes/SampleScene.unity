@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf66d5fc2904eb4429f8abf8789e3743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pain: {fileID: 2047085695}
   f_paint_speed: 0
   f_chick_jump: 0
   b_chick_death: 0
@@ -484,11 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0516ab3076a0e3844b107d5234190946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_number: 0
-  f_number: 0
-  b_can: 0
-  s_text: 
-  my_point: 0
 --- !u!4 &222240109
 Transform:
   m_ObjectHideFlags: 0
@@ -1379,7 +1375,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 1.42, y: 0.32}
+  m_Size: {x: 45.39, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1403,7 +1399,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1.42, y: 0.32}
+    newSize: {x: 45.39, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -1551,6 +1547,16 @@ PrefabInstance:
     - target: {fileID: 1855144531485089779, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202930784788832708, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202930784788832708, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
+        type: 3}
+      propertyPath: m_Simulated
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
