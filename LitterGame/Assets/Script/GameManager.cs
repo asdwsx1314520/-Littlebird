@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform pain;
+    [Header("目前分數")]
+    public int number;
 
-    public float f_paint_speed;
+    [Header("最佳分數")]
+    public int nowNumber;
 
-    public float f_chick_jump;
-
-    public float b_chick_death;
-
-    public int i_win_number;
-
-    public int i_win_bast;
-
-
-    void Start()
+    /// <summary>
+    /// 增加分數
+    /// </summary>
+    /// <param name="value">要給的數值</param>
+    public void addNumber(int value)
     {
-        
+
     }
-    
-    void Update()
+
+    /// <summary>
+    /// 最佳分數
+    /// </summary>
+    /// <param name="value">最佳數值</param>
+    public void heightNumber(int value)
     {
-        pain.Translate(-0.01f,0,0);
+
     }
 }
