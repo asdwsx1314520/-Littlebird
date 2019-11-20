@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 26838128}
   - component: {fileID: 26838129}
+  - component: {fileID: 26838130}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -270,13 +271,28 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_DrawMode: 2
+  m_Size: {x: 7.57, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &26838130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26838127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c65f8286d2d1c04192397cb863653c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySelf: {fileID: 26838128}
+  speed: 0.001
+  deathTime: 0
 --- !u!1 &29263424
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   number: 0
   nowNumber: 0
+  papi: {fileID: 347761236130756866, guid: 5dcd0c081f9a5c54f9092c971f5a3684, type: 3}
 --- !u!4 &29263426
 Transform:
   m_ObjectHideFlags: 0
@@ -1096,7 +1113,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780921662}
-  - component: {fileID: 1780921663}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1120,22 +1136,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1780921663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780921661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6ce2cafeb6f9549963ede1c5423485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plane: {fileID: 2047085695}
-  sky: {fileID: 26838128}
-  p_speed: 0
-  s_speed: 0
 --- !u!1 &1949452494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 2047085695}
   - component: {fileID: 2047085696}
   - component: {fileID: 2047085697}
+  - component: {fileID: 2047085698}
   m_Layer: 0
   m_Name: Pain
   m_TagString: Untagged
@@ -1425,8 +1426,23 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4143628, y: 0.26937082}
+  m_Size: {x: 45.39, y: 0.26937082}
   m_EdgeRadius: 0
+--- !u!114 &2047085698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047085694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6ce2cafeb6f9549963ede1c5423485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySelf: {fileID: 2047085695}
+  speed: 0.05
+  deathTime: 0
 --- !u!1 &2049035404
 GameObject:
   m_ObjectHideFlags: 0
