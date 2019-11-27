@@ -309,7 +309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &29263425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &71987219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -493,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222240107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4130601, y: 1.2969772, z: -3.3996248}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -795,8 +795,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8e31c1e37c916489de15173ba4c23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 0
+  jumpHeight: 0.03
   isDathe: 0
+  score: {fileID: 71987218}
+  onGm: {fileID: 29263424}
+  myHeor: {fileID: 818421146}
+  angle: 5
+--- !u!50 &818421146 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5202930784788832708, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1855144531389511311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &925108108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Simulated
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202930784788832708, guid: 8bb4dcca41a4bc94aad488f50d824fd8,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bb4dcca41a4bc94aad488f50d824fd8, type: 3}
