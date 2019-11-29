@@ -5,6 +5,6 @@ public class pint : BackgroundObject
 {
     public void Update()
     {
-        move(mySelf, speed);
+        move(mySelf, gm.speed_p);
     }
 }

@@ -11,6 +11,14 @@ public class BackgroundObject : MonoBehaviour
     [Header("死亡時間")]
     public float deathTime;
 
+    [Header("遊戲控制器")]
+    public GameManager gm;
+
+    public void Awake()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     /// <summary>
     /// 物體移動
     /// </summary>

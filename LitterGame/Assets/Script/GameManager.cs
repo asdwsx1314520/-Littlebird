@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,23 @@ public class GameManager : MonoBehaviour
     public int nowNumber;
 
     [Header("水管")]
-    public Object papi;
+    public GameObject papi;
+
+    [Header("結算畫面")]
+    public GameObject onFinally;
+
+    [Header("水管速度")]
+    public float speed_w;
+
+    [Header("地板移動速度")]
+    public float speed_p;
+
+    [Header("ui分數")]
+    public Text number_text;
+
+    [Header("ui最佳分數")]
+    public Text nowNumber_text;
+
 
     /// <summary>
     /// 增加分數
@@ -17,7 +34,8 @@ public class GameManager : MonoBehaviour
     /// <param name="value">要給的數值</param>
     public void addNumber(int value)
     {
-
+        number += value;
+        number_text.text = "" + number;
     }
 
     /// <summary>
@@ -26,7 +44,8 @@ public class GameManager : MonoBehaviour
     /// <param name="value">最佳數值</param>
     public void heightNumber(int value)
     {
-
+        nowNumber = value;
+        nowNumber_text.text = "" + nowNumber;
     }
 
     /// <summary>
@@ -40,6 +59,20 @@ public class GameManager : MonoBehaviour
 
         //identity 等於0
         Instantiate(papi, v2, Quaternion.identity);
+    }
+
+    public void gameOver()
+    {
+        onFinally.SetActive(true);
+
+        //水管停止生成
+        CancelInvoke("born");
+
+        //加入最佳分數
+        heightNumber(number);
+
+        speed_w = 0;
+        speed_p = 0;
     }
 
     public void Start()

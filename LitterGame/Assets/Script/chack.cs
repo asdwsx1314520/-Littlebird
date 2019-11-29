@@ -19,6 +19,13 @@ public class chack : MonoBehaviour
     //給予一個轉速
     public float angle;
 
+    //遊戲控制器腳本
+    public GameManager gm;
+
+    public AudioSource audio_this;
+    public AudioClip audio_jump , audio_hit , audio_pass;
+
+    //遊戲每1秒執行60次
     public void Update()
     {
         jump();
@@ -34,6 +41,9 @@ public class chack : MonoBehaviour
         //點擊滑鼠左鍵時
         if (Input.GetMouseButtonDown(0))
         {
+            //開啟腳本功能
+            gm.enabled = true;
+
             //開啟分數
             score.SetActive(true);
             //開啟遊戲控制器物件
@@ -45,19 +55,27 @@ public class chack : MonoBehaviour
             myHeor.gravityScale = 1;
             //給予一個向上的推力
             myHeor.AddForce(new Vector2(0, jumpHeight));
+
+            //播放跳要聲音
+            audio_this.PlayOneShot(audio_jump);
         }
         //判斷角色向上與向下的關係 以改變旋轉角度(0以上為向上 0以下為向下)
         myHeor.SetRotation(angle * myHeor.velocity.y);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Pain")
+        if (collision.gameObject.name == "Pain" || collision.gameObject.name == "Water(Clone)")
         {
-            print("腳色死亡");
             gameOver();
         }
-        print(123);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        gm.addNumber(1);
+        pass();
     }
 
     /// <summary>
@@ -66,6 +84,12 @@ public class chack : MonoBehaviour
     public void gameOver()
     {
         isDathe = true;
+
+        gm.enabled = false;
+        gm.gameOver();
+        
+        audio_this.PlayOneShot(audio_hit);
+
     }
 
     /// <summary>
@@ -73,6 +97,6 @@ public class chack : MonoBehaviour
     /// </summary>
     public void pass()
     {
-
+        audio_this.PlayOneShot(audio_pass);
     }
 }
