@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         //設定解析度
-        Screen.SetResolution(768, 1024, false);
+        Screen.SetResolution(450, 800, false);
 
         //born();
         InvokeRepeating("born", 0, 2);
