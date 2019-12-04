@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; //應用程式
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +28,6 @@ public class GameManager : MonoBehaviour
     [Header("ui最佳分數")]
     public Text nowNumber_text;
 
-
     /// <summary>
     /// 增加分數
     /// </summary>
@@ -36,16 +36,20 @@ public class GameManager : MonoBehaviour
     {
         number += value;
         number_text.text = "" + number;
+
+        heightNumber();
     }
 
     /// <summary>
-    /// 最佳分數
+    /// 最佳分數設定
     /// </summary>
     /// <param name="value">最佳數值</param>
-    public void heightNumber(int value)
+    public void heightNumber()
     {
-        nowNumber = value;
-        nowNumber_text.text = "" + nowNumber;
+        if(number > nowNumber)
+        {
+            PlayerPrefs.SetInt("最佳分數", number);
+        }
     }
 
     /// <summary>
@@ -68,18 +72,41 @@ public class GameManager : MonoBehaviour
         //水管停止生成
         CancelInvoke("born");
 
-        //加入最佳分數
-        heightNumber(number);
-
         speed_w = 0;
         speed_p = 0;
     }
 
     public void Start()
     {
+        //設定解析度
+        Screen.SetResolution(768, 1024, false);
+
         //born();
         InvokeRepeating("born", 0, 2);
+
+        //紀錄
+        nowNumber = PlayerPrefs.GetInt("最佳分數");
+        nowNumber_text.text = "" + nowNumber;
     }
 
+    /// <summary>
+    /// 重來
+    /// </summary>
+    public void onRegame()
+    {
+        print("重來");
+
+        SceneManager.LoadScene(0);
+    }
+
+    /// <summary>
+    /// 結束遊戲
+    /// </summary>
+    public void onExit()
+    {
+        print("結束遊戲");
+
+        Application.Quit();
+    }
     
 }
